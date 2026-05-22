@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singhvi Online - Blogger & Digital Marketer Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        header {
+            background: #f5f5f5;
+            padding: 2rem 0;
+            border-bottom: 1px solid #ddd;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        h2 {
+            font-size: 1.5rem;
+            margin: 1.5rem 0 1rem 0;
+            color: #d1234a;
+        }
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+            margin: 3rem 0;
+        }
+        .hero-text h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        .hero-text p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-primary {
+            background: #d1234a;
+            color: white;
+        }
+        .btn-primary:hover {
+            background: #a81b38;
+            transform: translateY(-2px);
+        }
+        .btn-secondary {
+            background: white;
+            color: #333;
+            border: 2px solid #333;
+        }
+        .btn-secondary:hover {
+            background: #333;
+            color: white;
+        }
+        .hero-image {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            padding: 2rem;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            font-weight: bold;
+            text-align: center;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+            padding: 2rem;
+            background: #f9f9f9;
+            border-radius: 10px;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #d1234a;
+        }
+        .stat-label {
+            color: #666;
+            margin-top: 0.5rem;
+        }
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .category-box {
+            background: white;
+            border: 2px solid #eee;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .category-box:hover {
+            border-color: #d1234a;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .category-box h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        .category-box .count {
+            color: #d1234a;
+            font-weight: bold;
+        }
+        .articles {
+            margin: 3rem 0;
+        }
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .article-card {
+            background: white;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .article-card:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+        .article-image {
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+        .article-content {
+            padding: 1.5rem;
+        }
+        .article-category {
+            color: #d1234a;
+            font-size: 0.85rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .article-title {
+            font-size: 1.2rem;
+            margin: 0.5rem 0;
+            color: #333;
+        }
+        .article-excerpt {
+            color: #666;
+            font-size: 0.95rem;
+            margin: 0.75rem 0;
+        }
+        .article-meta {
+            font-size: 0.85rem;
+            color: #999;
+        }
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        footer h3 {
+            margin-bottom: 1rem;
+        }
+        footer a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        footer a:hover {
+            color: #d1234a;
+        }
+        footer ul {
+            list-style: none;
+        }
+        footer li {
+            margin-bottom: 0.5rem;
+        }
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: #d1234a;
+            border-radius: 50%;
+            color: white;
+            font-weight: bold;
+        }
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+            .hero-image {
+                font-size: 2rem;
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Singhvi Online</h1>
+            <p>Stories, insights & ideas worth your time</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="hero-text">
+                    <h1>Stories, insights & ideas worth your time.</h1>
+                    <p>Singhvi Online brings you the latest articles, trends, and deep dives across the topics shaping today.</p>
+                    <a href="#articles" class="btn btn-primary">Explore Latest →</a>
+                    <a href="#" class="btn btn-secondary">Browse all posts</a>
+                </div>
+                <div class="hero-image">
+                    CONTENTS<br>Singhvi<br>Online
+                </div>
+            </section>
+
+            <!-- Stats -->
+            <section class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">50k+</div>
+                    <div class="stat-label">Monthly Readers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">200+</div>
+                    <div class="stat-label">Articles Published</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Content Categories</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+            </section>
+
+            <!-- Categories -->
+            <h2>Top Categories</h2>
+            <div class="categories">
+                <div class="category-box">
+                    <h3>⚽ Sports</h3>
+                    <div class="count">48 posts</div>
+                </div>
+                <div class="category-box">
+                    <h3>📚 Wiki</h3>
+                    <div class="count">38 posts</div>
+                </div>
+                <div class="category-box">
+                    <h3>🔥 Trending</h3>
+                    <div class="count">31 posts</div>
+                </div>
+                <div class="category-box">
+                    <h3>💰 Economics</h3>
+                    <div class="count">30 posts</div>
+                </div>
+                <div class="category-box">
+                    <h3>🧠 Knowledge</h3>
+                    <div class="count">27 posts</div>
+                </div>
+                <div class="category-box">
+                    <h3>❤️ Health</h3>
+                    <div class="count">25 posts</div>
+                </div>
+            </div>
+
+            <!-- Articles -->
+            <section class="articles" id="articles">
+                <h2>Latest Posts</h2>
+                <div class="article-grid">
+                    <article class="article-card">
+                        <div class="article-image">📝</div>
+                        <div class="article-content">
+                            <div class="article-category">Blogging</div>
+                            <h3 class="article-title">How to Turn Your Blog Into a 24/7 Marketing Machine</h3>
+                            <p class="article-excerpt">Learn proven strategies to automate your blog and generate consistent passive income.</p>
+                            <div class="article-meta">May 22, 2026 • 25k views</div>
+                        </div>
+                    </article>
+                    <article class="article-card">
+                        <div class="article-image">💹</div>
+                        <div class="article-content">
+                            <div class="article-category">Affiliate Marketing</div>
+                            <h3 class="article-title">THE COMPLETE GUIDE TO SCALING AFFILIATE MARKETING</h3>
+                            <p class="article-excerpt">Generate $12-15k for every $1 spent with data-driven strategies.</p>
+                            <div class="article-meta">May 22, 2026 • 30k views</div>
+                        </div>
+                    </article>
+                    <article class="article-card">
+                        <div class="article-image">🤖</div>
+                        <div class="article-content">
+                            <div class="article-category">AI</div>
+                            <h3 class="article-title">Girl AI Influencers: The Digital Revolution</h3>
+                            <p class="article-excerpt">How AI-generated influencers are reshaping social media.</p>
+                            <div class="article-meta">May 20, 2026 • 18k views</div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3>Singhvi Online</h3>
+                    <p>Stories, insights & ideas worth your time.</p>
+                    <p style="margin-top: 1rem; color: #999;">© 2026 Singhvi Online. All rights reserved.</p>
+                </div>
+                <div>
+                    <h3>Explore</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="ABOUT.md">About</a></li>
+                        <li><a href="PORTFOLIO.md">Portfolio</a></li>
+                        <li><a href="SERVICES.md">Services</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="#">Blogging</a></li>
+                        <li><a href="#">Affiliate Marketing</a></li>
+                        <li><a href="#">AI & Technology</a></li>
+                        <li><a href="#">Digital Marketing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Connect</h3>
+                    <p>Let's collaborate and create something amazing!</p>
+                    <div class="social-links">
+                        <a href="https://twitter.com/itssinghvionline" title="Twitter">𝕏</a>
+                        <a href="https://linkedin.com/in/rohitsinghvi" title="LinkedIn">in</a>
+                        <a href="mailto:contact@singhvionline.com" title="Email">✉</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
